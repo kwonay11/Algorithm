@@ -10,7 +10,7 @@ for tc in range(1, T+1):
     ans.reverse()
     print("#{}".format(tc), end=' ')
 
-    if len(ans) >= N:
+    if len(ans) >= N: #길이가 자리수 이상이면
         cnt = 0
         for k in range(N):
             cnt += ans[k]
@@ -19,7 +19,7 @@ for tc in range(1, T+1):
         else:
             print('OFF')
 
-    else:
+    else: # 자리수 보다 적으면 off
         print('OFF')
 
 
