@@ -60,14 +60,13 @@ for tc in range(T+1):
 시작점과 끝점이 한 원 안에 있을 때!
 
 ```python
-##50%까지 가다가 런타임에러(ValueError)
 import math
 import sys
 input = sys.stdin.readline
 
 T = int(input()) # 테케
 # 행성계 진입/이탈 횟수를 최소화
-for tc in range(T+1):
+for tc in range(T):
     x1, y1, x2, y2 = map(int, input().split())
     n = int(input()) # 행성계의 개수
     cnt = 0
@@ -87,4 +86,5 @@ for tc in range(T+1):
     print(cnt)
 ```
 
-그래도 에러나네
+
+
