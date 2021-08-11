@@ -1,20 +1,22 @@
 def solution(scores):
     answer = ''
-    for i in range(len(scores)):
-        high = max(scores[i])
-        low = min(scores[i])
-        for j in range(len(scores)):
-            if scores[i][j] == scores[j][i]:
-                if scores[i][j] == high or scores[i][j] == low:
-                    scores[i][j] = -1
-    # print(scores)
     for j in range(len(scores)):
+        cnt = len(scores)
         add = 0
-        cnt = 0
+        high = 0
+        low = 101
         for i in range(len(scores)):
-            if scores[i][j] != -1:
-                add += scores[i][j]
-                cnt += 1
+            add += scores[i][j]
+            if i == j:
+                continue
+            if high < scores[i][j]:
+                high = scores[i][j]
+            elif low > scores[i][j]:
+                low = scores[i][j]
+
+        if scores[j][j] > high or scores[j][j] < low:
+            add -= scores[j][j]
+            cnt -= 1
         grade = add / cnt
         if grade >= 90:
             answer += 'A'
@@ -25,8 +27,7 @@ def solution(scores):
         elif 50 <= grade < 70:
             answer += 'D'
         else:
-            answer +='F'
-
+            answer += 'F'
 
     return answer
 
