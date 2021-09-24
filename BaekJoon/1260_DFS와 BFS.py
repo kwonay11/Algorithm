@@ -19,12 +19,13 @@ N,M,V=list(map(int,input().split()))
 node = [[0]*(N+1) for _ in range(N+1)]
 visit = [0]*(N+1)
 
+print(node)
 for i in range(M):
     a,b = list(map(int,input().split()))
     # 양 방향으로 연결 시켜주기
     node[a][b] = 1
     node[b][a] = 1
-
+print(node)
 dfs(V)
 print()
 visit = [0]*(N+1)
