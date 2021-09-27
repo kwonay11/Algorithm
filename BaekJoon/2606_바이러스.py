@@ -5,12 +5,10 @@ def bfs(V):
     while q:
         cnt += 1
         front = q.pop(0)
-        print("F",front)
         for i in range(N+1):
             if visit[i] == 0 and matrix[front][i] == 1:
                 visit[i] = 1
                 q.append(i)
-                print(i)
 
     print(cnt -1)
 
